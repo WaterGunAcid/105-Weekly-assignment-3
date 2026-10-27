@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.gameButton {
+    min-height: 50px;
+    width: auto;
+}
+
+.gameImg {
+    min-height: 100px;
+    width: 200px;
+}
