@@ -1,10 +1,30 @@
-function cpuChoice(){
-    const choice = ["Rock", "Paper", "Scissors"]
-    const random = Math.floor(Math.random()*choice.length)
-    return choice[random]
+let playerScore = 0;
+let cpuScore = 0;
+
+function play(userChoice) {
+    const choice = ["rock", "paper", "scissors"];
+    const cpuChoice = choice[Math.floor(Math.random() * choice.length)];
+
+    let result = "";
+
+    if (userChoice === cpuChoice) {
+        result = "Tie";
+    } else if (
+        (userChoice === "rock" && cpuChoice === "scissors") ||
+        (userChoice === "paper" && cpuChoice === "rock") ||
+        (userChoice === "scissors" && cpuChoice === "paper")
+    ) {
+        result = `You win! CPU chose ${cpuChoice}`;
+        playerScore++;
+    } else {
+        result = `You lose, CPU chose ${cpuChoice}`;
+        cpuScore++;
+    }
+
+    document.getElementById("result").textContent = result;
+    document.getElementById("player-score").textContent = playerScore;
+    document.getElementById("computer-score").textContent = cpuScore;
 }
 
-function showChoice(){
-    const show = cpuChoice()
-    document.getElementById("result").textContent= `Computer: ${show}`
-}
+
+
